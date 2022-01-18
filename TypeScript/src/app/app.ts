@@ -28,7 +28,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   let Stage3: string = '../resources/3baloon.png';
   let Stage4: string = '../resources/4baloon.png';
   
-  let gauge: LinearGauge = new LinearGauge({
+  let gauge1: LinearGauge = new LinearGauge({
     height: '200px',
     title: 'Stage Progression',
     orientation: 'Horizontal',
@@ -77,7 +77,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
     ],
     axisLabelRender: axisLabelRender,
   });
-  gauge.appendTo('#linear1');
+  gauge1.appendTo('#linear1');
   
   let gauge2: LinearGauge = new LinearGauge({
     title: 'Stage Progression',
@@ -147,7 +147,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   gauge3.appendTo('#linear3');
   
   //Provides label name for each stage
-  function axisLabelRender(args: IAxisLabelRenderEventArgs) {
+  function axisLabelRender(args: IAxisLabelRenderEventArgs):void {
     if (args.value == 0) {
       args.text = 'Stage 1';
     } else if (args.value == 50) {
@@ -203,10 +203,10 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   
   //Update the pointer images based on the current position
   function updatePointerImage (img1: string, img2: string, img3: string, img4: string ):void {
-    gauge.axes[0].pointers[0].imageUrl = img1;
-    gauge.axes[0].pointers[1].imageUrl = img2;
-    gauge.axes[0].pointers[2].imageUrl = img3;
-    gauge.axes[0].pointers[3].imageUrl = img4;
+    gauge1.axes[0].pointers[0].imageUrl = img1;
+    gauge1.axes[0].pointers[1].imageUrl = img2;
+    gauge1.axes[0].pointers[2].imageUrl = img3;
+    gauge1.axes[0].pointers[3].imageUrl = img4;
   }
 
   //Update the pointer color based on the current position
@@ -219,9 +219,9 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
 
   //Update the range color based on the current position
   function updateRangeColor(color1: string, color2: string, color3: string):void {
-    gauge.axes[0].ranges[0].color = color1;
-    gauge.axes[0].ranges[1].color = color2;
-    gauge.axes[0].ranges[2].color = color3;
+    gauge1.axes[0].ranges[0].color = color1;
+    gauge1.axes[0].ranges[1].color = color2;
+    gauge1.axes[0].ranges[2].color = color3;
   
     gauge2.axes[0].ranges[0].color = color1;
     gauge2.axes[0].ranges[1].color = color2;
