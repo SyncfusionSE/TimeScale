@@ -7,8 +7,10 @@
     <ejs-lineargauge id="linear1" #gauge1 height="200px" title="Stage Progression" orientation="Horizontal"
       (axisLabelRender)="axisLabelRender($event)">
       <e-axes>
+        <!-- First axis to show the different stages and progress -->
         <e-axis minimum="0" maximum="150" [line]='axisline' [minorTicks]="minorTick" [majorTicks]="majorTick"
           [labelStyle]="label">
+           <!-- Pointer to denote the different stages. Different images are used based on current state of the stage (Finished, in-progress, Unfinished). -->
           <e-pointers>
             <e-pointer type="Marker" markerType="Image" value="0" offset="-5" [imageUrl]="FinishedPointer" height=30
               width=30></e-pointer>
@@ -19,12 +21,15 @@
             <e-pointer type="Marker" markerType="Image" value="150" offset="-5" [imageUrl]="UnFinishedPointer" height=30
               width=30></e-pointer>
           </e-pointers>
+           <!-- Ranges to connect the different stages in the UI.
+           Increased start by 3 and reduced end by 3 to provide space between the pointer image and the range bar -->
           <e-ranges>
             <e-range start="3" end="47" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
             <e-range start="53" end="97" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
             <e-range start="103" end="147" startWidth="8" endWidth="8" [color]="UnFinishedColor"></e-range>
           </e-ranges>
         </e-axis>
+        <!-- second axis to add images in the UI for each stage-->
         <e-axis minimum="200" maximum="350" [line]='axisline' [minorTicks]="minorTick" [majorTicks]="majorTick">
           <e-pointers>
             <e-pointer type="Marker" markerType="Image" value="200" offset="-10" [imageUrl]="Stage1" height=50 width=50>
@@ -46,12 +51,14 @@
       <e-axes>
         <e-axis minimum="0" maximum="150" [line]='axisline' [minorTicks]="minorTick" [majorTicks]="majorTick"
           [labelStyle]="label">
+          <!-- Shows different images for each stage -->
           <e-pointers>
             <e-pointer type="Marker" markerType="Image" value="0" [imageUrl]="Stage1" height=30 width=30></e-pointer>
             <e-pointer type="Marker" markerType="Image" value="50" [imageUrl]="Stage2" height=30 width=30></e-pointer>
             <e-pointer type="Marker" markerType="Image" value="100" [imageUrl]="Stage3" height=30 width=30></e-pointer>
             <e-pointer type="Marker" markerType="Image" value="150" [imageUrl]="Stage3" height=30 width=30></e-pointer>
           </e-pointers>
+          <!-- Ranges to connect the different stages in the UI. -->
           <e-ranges>
             <e-range start="0" end="50" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
             <e-range start="50" end="100" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
@@ -67,11 +74,15 @@
       <e-axes>
         <e-axis minimum="0" maximum="150" [line]='axisline' [minorTicks]="minorTick" [majorTicks]="majorTick"
           [labelStyle]="label">
+           <!-- Pointer to denote the different stages. Different colored circles are used based on current state of the stage (Finished, in-progress, Unfinished).
+           Stages can be denoted without pointers also. pointerfor stage 3 (Value:100) is skipped. -->
           <e-pointers>
             <e-pointer type="Marker" markerType="Circle" value="0" offset="-14" [color]="FinishedColor"></e-pointer>
             <e-pointer type="Marker" markerType="Circle" value="50" offset="-14" [color]="FinishedColor"></e-pointer>
             <e-pointer type="Marker" markerType="Circle" value="150" offset="-14" [color]="UnFinishedColor"></e-pointer>
           </e-pointers>
+          <!-- Ranges to connect the different stages in the UI.
+          Increased start by 3 and reduced end by 3 to provide space between the pointer image and the range bar -->
           <e-ranges>
             <e-range start="3" end="47" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
             <e-range start="53" end="100" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>

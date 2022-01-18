@@ -13,6 +13,7 @@ export class AppComponent {
   @ViewChild('gauge2')
   public gauge2: LinearGaugeComponent;
   @ViewChild('gauge3')
+  
   public gauge3: LinearGaugeComponent;
   public FinishedPointer: string = '../assets/FinishedTick.JPG';
   public CurrentActionPointer: string = '../assets/CurrentAction.JPG';
@@ -27,6 +28,7 @@ export class AppComponent {
   public Stage3: string = '../assets/3baloon.png';
   public Stage4: string = '../assets/4baloon.png';
 
+  //line , majorTicks, minorTicks are not required in UI, hence providing transparent color and width as 0
   public axisline:LineModel={
     width:0,
     color:"transparent"
@@ -41,6 +43,8 @@ export class AppComponent {
       width:0,
       color:"transparent"
   }
+  
+  // Adding offset to position at the label at desired spot
   public label:LabelModel={
       offset:70
   }
