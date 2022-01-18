@@ -17,12 +17,12 @@ npm install
 
 Use the below npm scripts to run the web application.
 
-###TypeScript
+* #### TypeScript
 
 ```
 npm run start
 ```
-###Angular
+* #### Angular
 
 ```
 npm run start
@@ -32,8 +32,10 @@ npm run start
 
 You can also refer the below resources to know more details about Essential JS 2 components.
 
-* [TypeScript Demos](http://ej2.syncfusion.com/demos/)
-* [TypeScript Documentation](http://ej2.syncfusion.com/documentation/)
+* [TypeScript Demos](https://ej2.syncfusion.com/home/)
+* [TypeScript Documentation](https://ej2.syncfusion.com/documentation/introduction/)
+* [Angular Demos](https://ej2.syncfusion.com/home/angular.html#platform)
+* [Angular Documentation](hhttps://ej2.syncfusion.com/angular/documentation/introduction/)
 
 ## Licensing
 
