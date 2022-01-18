@@ -35,7 +35,7 @@ You can also refer the below resources to know more details about Essential JS 2
 * [TypeScript Demos](https://ej2.syncfusion.com/home/)
 * [TypeScript Documentation](https://ej2.syncfusion.com/documentation/introduction/)
 * [Angular Demos](https://ej2.syncfusion.com/home/angular.html#platform)
-* [Angular Documentation](hhttps://ej2.syncfusion.com/angular/documentation/introduction/)
+* [Angular Documentation](https://ej2.syncfusion.com/angular/documentation/introduction/)
 
 ## Licensing
 
