@@ -27,6 +27,11 @@ npm run start
 ```
 npm run start
 ```
+* #### React
+
+```
+npm run start
+```
 
 ## Resources
 
@@ -36,6 +41,8 @@ You can also refer the below resources to know more details about Essential JS 2
 * [TypeScript Documentation](https://ej2.syncfusion.com/documentation/introduction/)
 * [Angular Demos](https://ej2.syncfusion.com/home/angular.html#platform)
 * [Angular Documentation](https://ej2.syncfusion.com/angular/documentation/introduction/)
+* [React Demos](https://ej2.syncfusion.com/home/react.html#platform)
+* [React Documentation](https://ej2.syncfusion.com/react/documentation/introduction/)
 
 ## Licensing
 
