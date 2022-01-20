@@ -8,9 +8,12 @@ import Stage4 from './Images/4baloon.png';
 import './App.css';
 import { LinearGaugeComponent, AxesDirective, AxisDirective,RangesDirective,RangeDirective, PointersDirective, PointerDirective } from '@syncfusion/ej2-react-lineargauge';
 import { NumericTextBoxComponent } from '@syncfusion/ej2-react-inputs';
+import { useRef } from 'react';
 
 function App() {
-let gauge1,gauge2,gauge3 ;
+const gauge1 = useRef(null);
+const gauge2 = useRef(null);
+const gauge3 = useRef(null);
 
 //Provides label name for each stage
 function axisLabelRender(args) {
@@ -68,29 +71,29 @@ function axisLabelRender(args) {
 }
 //Update the pointer images based on the current position
 function updatePointerImage(img1, img2, img3, img4) {
-    gauge1.axes[0].pointers[0].imageUrl = img1;
-    gauge1.axes[0].pointers[1].imageUrl = img2;
-    gauge1.axes[0].pointers[2].imageUrl = img3;
-    gauge1.axes[0].pointers[3].imageUrl = img4;
+    gauge1.current.axes[0].pointers[0].imageUrl = img1;
+    gauge1.current.axes[0].pointers[1].imageUrl = img2;
+    gauge1.current.axes[0].pointers[2].imageUrl = img3;
+    gauge1.current.axes[0].pointers[3].imageUrl = img4;
 }
 //Update the pointer color based on the current position
 function updatePointerColor(color1, color2, color3, color4) {
-    gauge3.axes[0].pointers[0].color = color1;
-    gauge3.axes[0].pointers[1].color = color2; 
+    gauge3.current.axes[0].pointers[0].color = color1;
+    gauge3.current.axes[0].pointers[1].color = color2; 
     //pointer 3 is skipped in the gauge, hence the pointer[2] is denoting the ponter 4. 
-    gauge3.axes[0].pointers[2].color = color4;
+    gauge3.current.axes[0].pointers[2].color = color4;
 }
 //Update the pointer color based on the current position
 function updateRangeColor(color1, color2, color3) {
-    gauge1.axes[0].ranges[0].color = color1;
-    gauge1.axes[0].ranges[1].color = color2;
-    gauge1.axes[0].ranges[2].color = color3;
-    gauge2.axes[0].ranges[0].color = color1;
-    gauge2.axes[0].ranges[1].color = color2;
-    gauge2.axes[0].ranges[2].color = color3;
-    gauge3.axes[0].ranges[0].color = color1;
-    gauge3.axes[0].ranges[1].color = color2;
-    gauge3.axes[0].ranges[2].color = color3;
+    gauge1.current.axes[0].ranges[0].color = color1;
+    gauge1.current.axes[0].ranges[1].color = color2;
+    gauge1.current.axes[0].ranges[2].color = color3;
+    gauge2.current.axes[0].ranges[0].color = color1;
+    gauge2.current.axes[0].ranges[1].color = color2;
+    gauge2.current.axes[0].ranges[2].color = color3;
+    gauge3.current.axes[0].ranges[0].color = color1;
+    gauge3.current.axes[0].ranges[1].color = color2;
+    gauge3.current.axes[0].ranges[2].color = color3;
 }
 
 let FinishedColor = '#f2a92f';
@@ -108,11 +111,11 @@ let label={offset:70}
 return (
     <div className='control-pane'>
         <div className='control-section'>
-            <div class="sample-container">
-                <div class="textbox-container">
+            <div className="sample-container">
+                <div className="textbox-container">
                     <NumericTextBoxComponent id="numeric" change={positionChange} format='#' value={3} min={0} max={5} placeholder="Pick the current position" strp={1} width="150px" floatLabelType="Always"/>
                 </div>
-                <div class="gauge-container">
+                <div className="gauge-container">
                     <LinearGaugeComponent  id='linear1' ref={gauge1} axisLabelRender={axisLabelRender}  height="200px" title="Stage Progression" orientation="Horizontal">
                         <AxesDirective>
                          {/* First axis to show the different stages and progress */}
@@ -130,7 +133,7 @@ return (
                                     </RangeDirective>
                                     <RangeDirective start={53} end={97} startWidth={8} endWidth={8} color={FinishedColor}>
                                     </RangeDirective>
-                                    <RangeDirective start={97} end={147} startWidth={8} endWidth={8} color={UnFinishedColor}>
+                                    <RangeDirective start={103} end={147} startWidth={8} endWidth={8} color={UnFinishedColor}>
                                     </RangeDirective>
                                 </RangesDirective>
                             </AxisDirective>
@@ -147,7 +150,7 @@ return (
                         </AxesDirective>
                     </LinearGaugeComponent>
                 </div>
-                <div class="gauge-container">
+                <div className="gauge-container">
                     <LinearGaugeComponent  id='linear2' ref={gauge2} axisLabelRender={axisLabelRender}  height="200px" title="Stage Progression" orientation="Horizontal">
                         <AxesDirective>
                             <AxisDirective line={axisline} minorTicks={minorTick} majorTicks={majorTick} labelStyle={label} minimum={0} maximum={150}>
@@ -171,7 +174,7 @@ return (
                         </AxesDirective>
                     </LinearGaugeComponent>
                 </div>
-                <div class="gauge-container">
+                <div className="gauge-container">
                     <LinearGaugeComponent  id='linear3' ref={gauge3} axisLabelRender={axisLabelRender}  height="200px" title="Stage Progression" orientation="Horizontal">
                         <AxesDirective>
                             <AxisDirective line={axisline} minorTicks={minorTick} majorTicks={majorTick} labelStyle={label} minimum={0} maximum={150}>
