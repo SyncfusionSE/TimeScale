@@ -15,9 +15,9 @@ export class AppComponent {
   @ViewChild('gauge3')
   
   public gauge3: LinearGaugeComponent;
-  public FinishedPointer: string = '../assets/FinishedTick.JPG';
-  public CurrentActionPointer: string = '../assets/CurrentAction.JPG';
-  public UnFinishedPointer: string = '../assets/UnfinishedTick.JPG';
+  public FinishedPointer: string = '../assets/FinishedTick.png';
+  public CurrentActionPointer: string = '../assets/CurrentAction.png';
+  public UnFinishedPointer: string = '../assets/UnfinishedTick.png';
   
   public FinishedColor: string = '#f2a92f';
   public UnFinishedColor: string = '#eeeeee';
@@ -51,13 +51,13 @@ export class AppComponent {
   
   //Provides label name for each stage
   public axisLabelRender(args: IAxisLabelRenderEventArgs):void {
-    if (args.value == 0) {
+    if (args.value === 0) {
       args.text = 'Stage 1';
-    } else if (args.value == 50) {
+    } else if (args.value === 50) {
       args.text = 'Stage 2';
-    } else if (args.value == 100) {
+    } else if (args.value === 100) {
       args.text = 'Stage 3';
-    } else if (args.value == 150) {
+    } else if (args.value === 150) {
       args.text = 'Stage 4';
     } else {
         //prevents rendering of default label for second axis
