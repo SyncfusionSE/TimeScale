@@ -15,9 +15,9 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   });
   numeric.appendTo('#numeric');
   
-  let FinishedPointer: string = '../resources/FinishedTick.JPG';
-  let CurrentActionPointer: string = '../resources/CurrentAction.JPG';
-  let UnFinishedPointer: string = '../resources/UnfinishedTick.JPG';
+  let FinishedPointer: string = '../resources/FinishedTick.png';
+  let CurrentActionPointer: string = '../resources/CurrentAction.png';
+  let UnFinishedPointer: string = '../resources/UnfinishedTick.png';
   
   let FinishedColor: string = '#f2a92f';
   let UnFinishedColor: string = '#eeeeee';
@@ -148,13 +148,13 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   
   //Provides label name for each stage
   function axisLabelRender(args: IAxisLabelRenderEventArgs):void {
-    if (args.value == 0) {
+    if (args.value === 0) {
       args.text = 'Stage 1';
-    } else if (args.value == 50) {
+    } else if (args.value === 50) {
       args.text = 'Stage 2';
-    } else if (args.value == 100) {
+    } else if (args.value === 100) {
       args.text = 'Stage 3';
-    } else if (args.value == 150) {
+    } else if (args.value === 150) {
       args.text = 'Stage 4';
     } else {
         //prevents rendering of default label for second axis
