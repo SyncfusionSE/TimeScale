@@ -1,0 +1,25 @@
+{
+  "name": "ej2-ts-webpack",
+  "sideEffects": false,
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack && http-server -c-1 -p 8081 -o"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "terser-webpack-plugin": "^2.3.5",
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@syncfusion/ej2-lineargauge": "*",
+    "@syncfusion/ej2-inputs": "*",
+    "http-server": "^0.12.3"
+  }
+}

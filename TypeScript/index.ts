@@ -1,6 +1,5 @@
 import {    LinearGauge ,IAxisLabelRenderEventArgs  } from '@syncfusion/ej2-lineargauge';
 import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
-  
 
   let numeric: NumericTextBox = new NumericTextBox({
     min: 0,
@@ -15,20 +14,20 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   });
   numeric.appendTo('#numeric');
   
-  let FinishedPointer: string = '../resources/FinishedTick.png';
-  let CurrentActionPointer: string = '../resources/CurrentAction.png';
-  let UnFinishedPointer: string = '../resources/UnfinishedTick.png';
+  let FinishedPointer: string = './resources/FinishedTick.JPG';
+  let CurrentActionPointer: string = './resources/CurrentAction.JPG';
+  let UnFinishedPointer: string = './resources/UnfinishedTick.JPG';
   
   let FinishedColor: string = '#f2a92f';
   let UnFinishedColor: string = '#eeeeee';
   let CurrentActionColor: string = '#79564e';
   
-  let Stage1: string = '../resources/1baloon.png';
-  let Stage2: string = '../resources/2baloon.png';
-  let Stage3: string = '../resources/3baloon.png';
-  let Stage4: string = '../resources/4baloon.png';
+  let Stage1: string = './resources/1baloon.png';
+  let Stage2: string = './resources/2baloon.png';
+  let Stage3: string = './resources/3baloon.png';
+  let Stage4: string = './resources/4baloon.png';
   
-  let gauge1: LinearGauge = new LinearGauge({
+  let gauge: LinearGauge = new LinearGauge({
     height: '200px',
     title: 'Stage Progression',
     orientation: 'Horizontal',
@@ -77,7 +76,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
     ],
     axisLabelRender: axisLabelRender,
   });
-  gauge1.appendTo('#linear1');
+  gauge.appendTo('#linear1');
   
   let gauge2: LinearGauge = new LinearGauge({
     title: 'Stage Progression',
@@ -147,14 +146,14 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   gauge3.appendTo('#linear3');
   
   //Provides label name for each stage
-  function axisLabelRender(args: IAxisLabelRenderEventArgs):void {
-    if (args.value === 0) {
+  function axisLabelRender(args: IAxisLabelRenderEventArgs) {
+    if (args.value == 0) {
       args.text = 'Stage 1';
-    } else if (args.value === 50) {
+    } else if (args.value == 50) {
       args.text = 'Stage 2';
-    } else if (args.value === 100) {
+    } else if (args.value == 100) {
       args.text = 'Stage 3';
-    } else if (args.value === 150) {
+    } else if (args.value == 150) {
       args.text = 'Stage 4';
     } else {
         //prevents rendering of default label for second axis
@@ -203,10 +202,10 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   
   //Update the pointer images based on the current position
   function updatePointerImage (img1: string, img2: string, img3: string, img4: string ):void {
-    gauge1.axes[0].pointers[0].imageUrl = img1;
-    gauge1.axes[0].pointers[1].imageUrl = img2;
-    gauge1.axes[0].pointers[2].imageUrl = img3;
-    gauge1.axes[0].pointers[3].imageUrl = img4;
+    gauge.axes[0].pointers[0].imageUrl = img1;
+    gauge.axes[0].pointers[1].imageUrl = img2;
+    gauge.axes[0].pointers[2].imageUrl = img3;
+    gauge.axes[0].pointers[3].imageUrl = img4;
   }
 
   //Update the pointer color based on the current position
@@ -219,9 +218,9 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
 
   //Update the range color based on the current position
   function updateRangeColor(color1: string, color2: string, color3: string):void {
-    gauge1.axes[0].ranges[0].color = color1;
-    gauge1.axes[0].ranges[1].color = color2;
-    gauge1.axes[0].ranges[2].color = color3;
+    gauge.axes[0].ranges[0].color = color1;
+    gauge.axes[0].ranges[1].color = color2;
+    gauge.axes[0].ranges[2].color = color3;
   
     gauge2.axes[0].ranges[0].color = color1;
     gauge2.axes[0].ranges[1].color = color2;
