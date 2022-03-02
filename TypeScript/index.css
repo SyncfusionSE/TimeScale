@@ -1,4 +1,5 @@
-@import '../../node_modules/@syncfusion/ej2/material.css';
+@import 'node_modules/@syncfusion/ej2-base/styles/material.css';
+@import 'node_modules/@syncfusion/ej2-inputs/styles/material.css';
 
 .sample-container{
     box-shadow:0 0 10px;
@@ -8,5 +9,8 @@
 .gauge-container,.textbox-container{
     box-shadow:0 0 10px inset;
     padding: 15px;
+
+}
+.textbox-container {
     text-align: center;
 }
