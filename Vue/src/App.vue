@@ -13,7 +13,7 @@
                 <e-pointer type="Marker" markerType="Image" value="0" offset="-5" :imageUrl="FinishedPointer" height="30" width="30"></e-pointer>
                 <e-pointer type="Marker" markerType="Image" value="50" offset="-5" :imageUrl="FinishedPointer" height="30" width="30"></e-pointer>
                 <e-pointer type="Marker" markerType="Image" value="100" offset="-5" :imageUrl="CurrentActionPointer" height="30" width="30"></e-pointer>
-                <e-pointer type="Marker" markerType="Image" value="150" offset="-5" :imageUrl="UnFinishedPointer" height="30" width="30"></e-pointer>
+                <e-pointer type="Marker" markerType="Image" value="150" offset="-5" :imageUrl="NotStartedPointer" height="30" width="30"></e-pointer>
               </e-pointers>
               <e-ranges>
                 <e-range start="3" end="47" startWidth="8" endWidth="8" :color="FinishedColor"></e-range>
@@ -96,7 +96,7 @@ export default {
 
       FinishedPointer: require("./assets/FinishedTick.png"),
       CurrentActionPointer: require("./assets/CurrentAction.png"),
-      UnFinishedPointer: require("./assets/UnfinishedTick.png"),
+      NotStartedPointer: require("./assets/UnfinishedTick.png"),
 
       Stage1: require("./assets/1baloon.png"),
       Stage2: require("./assets/2baloon.png"),
@@ -136,22 +136,22 @@ export default {
     positionChange: function (args) {
       switch (args.value) {
         case 0:
-          this.updatePointerImage( this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer );
+          this.updatePointerImage( this.NotStartedPointer, this.NotStartedPointer, this.NotStartedPointer, this.NotStartedPointer );
           this.updatePointerColor( this.NotStartedColor, this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
           this.updateRangeColor( this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
           break; 
         case 1:
-          this.updatePointerImage( this.CurrentActionPointer, this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer );
+          this.updatePointerImage( this.CurrentActionPointer, this.NotStartedPointer, this.NotStartedPointer, this.NotStartedPointer );
           this.updatePointerColor( this.CurrentActionColor, this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
           this.updateRangeColor( this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
           break;
         case 2:
-          this.updatePointerImage( this.FinishedPointer, this.CurrentActionPointer, this.UnFinishedPointer, this.UnFinishedPointer );
+          this.updatePointerImage( this.FinishedPointer, this.CurrentActionPointer, this.NotStartedPointer, this.NotStartedPointer );
           this.updatePointerColor( this.FinishedColor, this.CurrentActionColor, this.NotStartedColor, this.NotStartedColor );
           this.updateRangeColor( this.FinishedColor, this.NotStartedColor, this.NotStartedColor );
           break;
         case 3:
-          this.updatePointerImage( this.FinishedPointer, this.FinishedPointer, this.CurrentActionPointer, this.UnFinishedPointer );
+          this.updatePointerImage( this.FinishedPointer, this.FinishedPointer, this.CurrentActionPointer, this.NotStartedPointer );
           this.updatePointerColor( this.FinishedColor, this.FinishedColor, this.CurrentActionColor, this.NotStartedColor );
           this.updateRangeColor( this.FinishedColor, this.FinishedColor, this.NotStartedColor );
           break;
