@@ -19,7 +19,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   let UnFinishedPointer: string = './resources/UnfinishedTick.JPG';
   
   let FinishedColor: string = '#f2a92f';
-  let UnFinishedColor: string = '#eeeeee';
+  let NotStartedColor: string = '#eeeeee';
   let CurrentActionColor: string = '#79564e';
   
   let Stage1: string = './resources/1baloon.png';
@@ -54,7 +54,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
         ranges: [
           { start: 3, end: 47, startWidth: 8, endWidth: 8, color: FinishedColor },
           { start: 53, end: 97, startWidth: 8, endWidth: 8, color: FinishedColor },
-          { start: 103, end: 147, startWidth: 8, endWidth: 8, color: UnFinishedColor },
+          { start: 103, end: 147, startWidth: 8, endWidth: 8, color: NotStartedColor },
         ],
       },
       //second axis to add images in the UI for each stage.
@@ -103,7 +103,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
         ranges: [
           { start: 0, end: 50, startWidth: 8, endWidth: 8, color: FinishedColor },
           { start: 50, end: 100, startWidth: 8, endWidth: 8, color: FinishedColor },
-          { start: 100, end: 150, startWidth: 8, endWidth: 8, color: UnFinishedColor },
+          { start: 100, end: 150, startWidth: 8, endWidth: 8, color: NotStartedColor },
         ],
       },
     ],
@@ -130,14 +130,14 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
         pointers: [
           {type: 'Marker', value: 0, offset: -19, markerType: 'Circle', color: FinishedColor, height: 30, width: 30 },
           {type: 'Marker', value: 50, offset: -19, markerType: 'Circle', color: FinishedColor, height: 30, width: 30 },
-          {type: 'Marker', value: 150, offset: -19, markerType: 'Circle', color: UnFinishedColor, height: 30, width: 30},
+          {type: 'Marker', value: 150, offset: -19, markerType: 'Circle', color: NotStartedColor, height: 30, width: 30},
         ],
         // Ranges to connect the different stages in the UI.
         // Increased start by 3 and reduced end by 3 to provide space between the pointer circle and the range bar
         ranges: [
           { start: 3,end: 47, startWidth: 8, endWidth: 8, color: FinishedColor },
           { start: 53, end: 100, startWidth: 8, endWidth: 8, color: FinishedColor },
-          { start: 100, end: 147, startWidth: 8, endWidth: 8, color: UnFinishedColor },
+          { start: 100, end: 147, startWidth: 8, endWidth: 8, color: NotStartedColor },
         ],
       },
     ],
@@ -167,23 +167,23 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
     switch (args.value) {
       case 0:
         updatePointerImage( UnFinishedPointer, UnFinishedPointer, UnFinishedPointer, UnFinishedPointer );
-        updatePointerColor( UnFinishedColor, UnFinishedColor, UnFinishedColor, UnFinishedColor );
-        updateRangeColor( UnFinishedColor, UnFinishedColor, UnFinishedColor );
+        updatePointerColor( NotStartedColor, NotStartedColor, NotStartedColor, NotStartedColor );
+        updateRangeColor( NotStartedColor, NotStartedColor, NotStartedColor );
         break;
       case 1:
         updatePointerImage( CurrentActionPointer, UnFinishedPointer, UnFinishedPointer, UnFinishedPointer );
-        updatePointerColor( CurrentActionColor, UnFinishedColor, UnFinishedColor, UnFinishedColor );
-        updateRangeColor(UnFinishedColor, UnFinishedColor, UnFinishedColor);
+        updatePointerColor( CurrentActionColor, NotStartedColor, NotStartedColor, NotStartedColor );
+        updateRangeColor(NotStartedColor, NotStartedColor, NotStartedColor);
         break;
       case 2:
         updatePointerImage( FinishedPointer, CurrentActionPointer, UnFinishedPointer, UnFinishedPointer );
-        updatePointerColor( FinishedColor, CurrentActionColor, UnFinishedColor, UnFinishedColor );
-        updateRangeColor(FinishedColor, UnFinishedColor, UnFinishedColor);
+        updatePointerColor( FinishedColor, CurrentActionColor, NotStartedColor, NotStartedColor );
+        updateRangeColor(FinishedColor, NotStartedColor, NotStartedColor);
         break;
       case 3:
         updatePointerImage( FinishedPointer, FinishedPointer, CurrentActionPointer, UnFinishedPointer );
-        updatePointerColor( FinishedColor, FinishedColor, CurrentActionColor, UnFinishedColor );
-        updateRangeColor(FinishedColor, FinishedColor, UnFinishedColor);
+        updatePointerColor( FinishedColor, FinishedColor, CurrentActionColor, NotStartedColor );
+        updateRangeColor(FinishedColor, FinishedColor, NotStartedColor);
         break;
       case 4:
         updatePointerImage(FinishedPointer, FinishedPointer, FinishedPointer, CurrentActionPointer );

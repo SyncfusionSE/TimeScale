@@ -18,7 +18,7 @@
               <e-ranges>
                 <e-range start="3" end="47" startWidth="8" endWidth="8" :color="FinishedColor"></e-range>
                 <e-range start="53" end="97" startWidth="8" endWidth="8" :color="FinishedColor"></e-range>
-                <e-range start="103" end="147" startWidth="8" endWidth="8" :color="UnFinishedColor"></e-range>
+                <e-range start="103" end="147" startWidth="8" endWidth="8" :color="NotStartedColor"></e-range>
               </e-ranges>
             </e-axis>
             <e-axis minimum="200" maximum="350" :line="axisline" :minorTicks="minorTick" :majorTicks="majorTick">
@@ -45,7 +45,7 @@
               <e-ranges>
                 <e-range start="0" end="50" startWidth="8" endWidth="8" :color="FinishedColor"></e-range>
                 <e-range start="50" end="100" startWidth="8" endWidth="8" :color="FinishedColor"></e-range>
-                <e-range start="100" end="150" startWidth="8" endWidth="8" :color="UnFinishedColor"></e-range>
+                <e-range start="100" end="150" startWidth="8" endWidth="8" :color="NotStartedColor"></e-range>
               </e-ranges>
             </e-axis>
           </e-axes>
@@ -58,12 +58,12 @@
               <e-pointers>
                 <e-pointer type="Marker" markerType="Circle" value="0" offset="-14" :color="FinishedColor"></e-pointer>
                 <e-pointer type="Marker" markerType="Circle" value="50" offset="-14" :color="FinishedColor"></e-pointer>
-                <e-pointer type="Marker" markerType="Circle" value="150" offset="-14" :color="UnFinishedColor"></e-pointer>
+                <e-pointer type="Marker" markerType="Circle" value="150" offset="-14" :color="NotStartedColor"></e-pointer>
               </e-pointers>
               <e-ranges>
                 <e-range start="3" end="47" startWidth="8" endWidth="8" :color="FinishedColor"></e-range>
                 <e-range start="53" end="100" startWidth="8" endWidth="8" :color="FinishedColor"></e-range>
-                <e-range start="100" end="147" startWidth="8" endWidth="8" :color="UnFinishedColor"></e-range>
+                <e-range start="100" end="147" startWidth="8" endWidth="8" :color="NotStartedColor"></e-range>
               </e-ranges>
             </e-axis>
           </e-axes>
@@ -104,7 +104,7 @@ export default {
       Stage4: require("./assets/4baloon.png"),
 
       FinishedColor: "#f2a92f",
-      UnFinishedColor: "#eeeeee",
+      NotStartedColor: "#eeeeee",
       CurrentActionColor: "#79564e",
 
   //line , majorTicks, minorTicks are not required in UI, hence providing transparent color and width as 0
@@ -137,23 +137,23 @@ export default {
       switch (args.value) {
         case 0:
           this.updatePointerImage( this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer );
-          this.updatePointerColor( this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor );
-          this.updateRangeColor( this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor );
+          this.updatePointerColor( this.NotStartedColor, this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
+          this.updateRangeColor( this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
           break; 
         case 1:
           this.updatePointerImage( this.CurrentActionPointer, this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer );
-          this.updatePointerColor( this.CurrentActionColor, this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor );
-          this.updateRangeColor( this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor );
+          this.updatePointerColor( this.CurrentActionColor, this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
+          this.updateRangeColor( this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
           break;
         case 2:
           this.updatePointerImage( this.FinishedPointer, this.CurrentActionPointer, this.UnFinishedPointer, this.UnFinishedPointer );
-          this.updatePointerColor( this.FinishedColor, this.CurrentActionColor, this.UnFinishedColor, this.UnFinishedColor );
-          this.updateRangeColor( this.FinishedColor, this.UnFinishedColor, this.UnFinishedColor );
+          this.updatePointerColor( this.FinishedColor, this.CurrentActionColor, this.NotStartedColor, this.NotStartedColor );
+          this.updateRangeColor( this.FinishedColor, this.NotStartedColor, this.NotStartedColor );
           break;
         case 3:
           this.updatePointerImage( this.FinishedPointer, this.FinishedPointer, this.CurrentActionPointer, this.UnFinishedPointer );
-          this.updatePointerColor( this.FinishedColor, this.FinishedColor, this.CurrentActionColor, this.UnFinishedColor );
-          this.updateRangeColor( this.FinishedColor, this.FinishedColor, this.UnFinishedColor );
+          this.updatePointerColor( this.FinishedColor, this.FinishedColor, this.CurrentActionColor, this.NotStartedColor );
+          this.updateRangeColor( this.FinishedColor, this.FinishedColor, this.NotStartedColor );
           break;
         case 4:
           this.updatePointerImage( this.FinishedPointer, this.FinishedPointer, this.FinishedPointer, this.CurrentActionPointer );

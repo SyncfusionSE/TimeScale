@@ -26,7 +26,7 @@
           <e-ranges>
             <e-range start="3" end="47" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
             <e-range start="53" end="97" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
-            <e-range start="103" end="147" startWidth="8" endWidth="8" [color]="UnFinishedColor"></e-range>
+            <e-range start="103" end="147" startWidth="8" endWidth="8" [color]="NotStartedColor"></e-range>
           </e-ranges>
         </e-axis>
         <!-- second axis to add images in the UI for each stage-->
@@ -62,7 +62,7 @@
           <e-ranges>
             <e-range start="0" end="50" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
             <e-range start="50" end="100" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
-            <e-range start="100" end="150" startWidth="8" endWidth="8" [color]="UnFinishedColor"></e-range>
+            <e-range start="100" end="150" startWidth="8" endWidth="8" [color]="NotStartedColor"></e-range>
           </e-ranges>
         </e-axis>
       </e-axes>
@@ -79,14 +79,14 @@
           <e-pointers>
             <e-pointer type="Marker" markerType="Circle" value="0" offset="-14" [color]="FinishedColor"></e-pointer>
             <e-pointer type="Marker" markerType="Circle" value="50" offset="-14" [color]="FinishedColor"></e-pointer>
-            <e-pointer type="Marker" markerType="Circle" value="150" offset="-14" [color]="UnFinishedColor"></e-pointer>
+            <e-pointer type="Marker" markerType="Circle" value="150" offset="-14" [color]="NotStartedColor"></e-pointer>
           </e-pointers>
           <!-- Ranges to connect the different stages in the UI.
           Increased start by 3 and reduced end by 3 to provide space between the pointer image and the range bar -->
           <e-ranges>
             <e-range start="3" end="47" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
             <e-range start="53" end="100" startWidth="8" endWidth="8" [color]="FinishedColor"></e-range>
-            <e-range start="100" end="147" startWidth="8" endWidth="8" [color]="UnFinishedColor"></e-range>
+            <e-range start="100" end="147" startWidth="8" endWidth="8" [color]="NotStartedColor"></e-range>
           </e-ranges>
         </e-axis>
       </e-axes>
