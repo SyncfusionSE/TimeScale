@@ -20,7 +20,7 @@ export class AppComponent {
   public UnFinishedPointer: string = '../assets/UnfinishedTick.png';
   
   public FinishedColor: string = '#f2a92f';
-  public UnFinishedColor: string = '#eeeeee';
+  public NotStartedColor: string = '#eeeeee';
   public CurrentActionColor: string = '#79564e';
   
   public Stage1: string = '../assets/1baloon.png';
@@ -70,23 +70,23 @@ export class AppComponent {
     switch (args.value) {
       case 0:
         this.updatePointerImage( this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer );
-        this.updatePointerColor( this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor );
-        this.updateRangeColor( this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor );
+        this.updatePointerColor( this.NotStartedColor, this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
+        this.updateRangeColor( this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
         break;
       case 1:
         this.updatePointerImage( this.CurrentActionPointer, this.UnFinishedPointer, this.UnFinishedPointer, this.UnFinishedPointer );
-        this.updatePointerColor( this.CurrentActionColor, this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor );
-        this.updateRangeColor(this.UnFinishedColor, this.UnFinishedColor, this.UnFinishedColor);
+        this.updatePointerColor( this.CurrentActionColor, this.NotStartedColor, this.NotStartedColor, this.NotStartedColor );
+        this.updateRangeColor(this.NotStartedColor, this.NotStartedColor, this.NotStartedColor);
         break;
       case 2:
         this.updatePointerImage( this.FinishedPointer, this.CurrentActionPointer, this.UnFinishedPointer, this.UnFinishedPointer );
-        this.updatePointerColor( this.FinishedColor, this.CurrentActionColor, this.UnFinishedColor, this.UnFinishedColor );
-        this.updateRangeColor(this.FinishedColor, this.UnFinishedColor, this.UnFinishedColor);
+        this.updatePointerColor( this.FinishedColor, this.CurrentActionColor, this.NotStartedColor, this.NotStartedColor );
+        this.updateRangeColor(this.FinishedColor, this.NotStartedColor, this.NotStartedColor);
         break;
       case 3:
         this.updatePointerImage( this.FinishedPointer, this.FinishedPointer, this.CurrentActionPointer, this.UnFinishedPointer );
-        this.updatePointerColor( this.FinishedColor, this.FinishedColor, this.CurrentActionColor, this.UnFinishedColor );
-        this.updateRangeColor(this.FinishedColor, this.FinishedColor, this.UnFinishedColor);
+        this.updatePointerColor( this.FinishedColor, this.FinishedColor, this.CurrentActionColor, this.NotStartedColor );
+        this.updateRangeColor(this.FinishedColor, this.FinishedColor, this.NotStartedColor);
         break;
       case 4:
         this.updatePointerImage(this.FinishedPointer, this.FinishedPointer, this.FinishedPointer, this.CurrentActionPointer );

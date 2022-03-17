@@ -37,23 +37,23 @@ function axisLabelRender(args) {
     switch (args.value) {
         case 0:
             updatePointerImage(UnFinishedPointer, UnFinishedPointer, UnFinishedPointer, UnFinishedPointer);
-            updatePointerColor(UnFinishedColor, UnFinishedColor, UnFinishedColor, UnFinishedColor);
-            updateRangeColor(UnFinishedColor, UnFinishedColor, UnFinishedColor);
+            updatePointerColor(NotStartedColor, NotStartedColor, NotStartedColor, NotStartedColor);
+            updateRangeColor(NotStartedColor, NotStartedColor, NotStartedColor);
             break;
         case 1:
             updatePointerImage(CurrentActionPointer, UnFinishedPointer, UnFinishedPointer, UnFinishedPointer);
-            updatePointerColor(CurrentActionColor, UnFinishedColor, UnFinishedColor, UnFinishedColor);
-            updateRangeColor(UnFinishedColor, UnFinishedColor, UnFinishedColor);
+            updatePointerColor(CurrentActionColor, NotStartedColor, NotStartedColor, NotStartedColor);
+            updateRangeColor(NotStartedColor, NotStartedColor, NotStartedColor);
             break;
         case 2:
             updatePointerImage(FinishedPointer, CurrentActionPointer, UnFinishedPointer, UnFinishedPointer);
-            updatePointerColor(FinishedColor, CurrentActionColor, UnFinishedColor, UnFinishedColor);
-            updateRangeColor(FinishedColor, UnFinishedColor, UnFinishedColor);
+            updatePointerColor(FinishedColor, CurrentActionColor, NotStartedColor, NotStartedColor);
+            updateRangeColor(FinishedColor, NotStartedColor, NotStartedColor);
             break;
         case 3:
             updatePointerImage(FinishedPointer, FinishedPointer, CurrentActionPointer, UnFinishedPointer);
-            updatePointerColor(FinishedColor, FinishedColor, CurrentActionColor, UnFinishedColor);
-            updateRangeColor(FinishedColor, FinishedColor, UnFinishedColor);
+            updatePointerColor(FinishedColor, FinishedColor, CurrentActionColor, NotStartedColor);
+            updateRangeColor(FinishedColor, FinishedColor, NotStartedColor);
             break;
         case 4:
             updatePointerImage(FinishedPointer, FinishedPointer, FinishedPointer, CurrentActionPointer);
@@ -97,7 +97,7 @@ function updateRangeColor(color1, color2, color3) {
 }
 
 let FinishedColor = '#f2a92f';
-let UnFinishedColor = '#eeeeee';
+let NotStartedColor = '#eeeeee';
 let CurrentActionColor = '#79564e';
 
 //line , majorTicks, minorTicks are not required in UI, hence providing transparent color and width as 0
@@ -133,7 +133,7 @@ return (
                                     </RangeDirective>
                                     <RangeDirective start={53} end={97} startWidth={8} endWidth={8} color={FinishedColor}>
                                     </RangeDirective>
-                                    <RangeDirective start={103} end={147} startWidth={8} endWidth={8} color={UnFinishedColor}>
+                                    <RangeDirective start={103} end={147} startWidth={8} endWidth={8} color={NotStartedColor}>
                                     </RangeDirective>
                                 </RangesDirective>
                             </AxisDirective>
@@ -167,7 +167,7 @@ return (
                                     </RangeDirective>
                                     <RangeDirective start={50} end={100} startWidth={8} endWidth={8} color={FinishedColor}>
                                     </RangeDirective>
-                                    <RangeDirective start={100} end={150} startWidth={8} endWidth={8} color={UnFinishedColor}>
+                                    <RangeDirective start={100} end={150} startWidth={8} endWidth={8} color={NotStartedColor}>
                                     </RangeDirective>
                                 </RangesDirective>
                             </AxisDirective>
@@ -183,7 +183,7 @@ return (
                                 <PointersDirective>
                                     <PointerDirective type="Marker" offset="-19" markerType="Circle" value="0" color={FinishedColor} height= {30} width= {30}></PointerDirective>
                                     <PointerDirective type="Marker" offset="-19" markerType="Circle" value="50" color={FinishedColor} height= {30} width= {30}></PointerDirective>
-                                    <PointerDirective type="Marker" offset="-19" markerType="Circle" value="150" color={UnFinishedColor} height= {30} width= {30}></PointerDirective>
+                                    <PointerDirective type="Marker" offset="-19" markerType="Circle" value="150" color={NotStartedColor} height= {30} width= {30}></PointerDirective>
                                 </PointersDirective>
                                 {/* Ranges to connect the different stages in the UI.
                                 Increased start by 3 and reduced end by 3 to provide space between the pointer image and the range bar */}
@@ -192,7 +192,7 @@ return (
                                     </RangeDirective>
                                     <RangeDirective start={53} end={100} startWidth={8} endWidth={8} color={FinishedColor}>
                                     </RangeDirective>
-                                    <RangeDirective start={100} end={147} startWidth={8} endWidth={8} color={UnFinishedColor}>
+                                    <RangeDirective start={100} end={147} startWidth={8} endWidth={8} color={NotStartedColor}>
                                     </RangeDirective>
                                 </RangesDirective>
                             </AxisDirective>
