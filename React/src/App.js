@@ -30,6 +30,22 @@ function axisLabelRender(args) {
       args.cancel = true;
     }
   }
+  
+  //Provides label name for each stage on for the third gauge
+  function axisLabelRender3(args) {
+    if (args.value == 0) {
+      args.text = 'Received';
+    } else if (args.value == 50) {
+      args.text = 'Shipped';
+    } else if (args.value == 100) {
+      args.text = 'In transit';
+    } else if (args.value == 150) {
+      args.text = 'Delivered';
+    } else {
+        //prevents rendering of default label for second axis
+      args.cancel = true;
+    }
+  }
 
   //Pass the image,color for pointers and ranges based on the current position.
   //same image/color for each state is used for all pointers. Different image for each state of each pointer can also be used.
@@ -137,7 +153,7 @@ return (
                                     </RangeDirective>
                                 </RangesDirective>
                             </AxisDirective>
-                            {/* second axis to add images in the UI for each stage. */}
+                            {/* second axis to add balloons in the UI for each stage. */}
                             <AxisDirective line={axisline} minorTicks={minorTick} majorTicks={majorTick} labelStyle={label} minimum={200} maximum={350}>
                                 {/* Shows different images for each stage */}
                                 <PointersDirective>
@@ -175,7 +191,7 @@ return (
                     </LinearGaugeComponent>
                 </div>
                 <div className="gauge-container">
-                    <LinearGaugeComponent  id='linear3' ref={gauge3} axisLabelRender={axisLabelRender}  height="200px" title="Stage Progression" orientation="Horizontal">
+                    <LinearGaugeComponent  id='linear3' ref={gauge3} axisLabelRender={axisLabelRender3}  height="200px" title="Shipping Status" orientation="Horizontal">
                         <AxesDirective>
                             <AxisDirective line={axisline} minorTicks={minorTick} majorTicks={majorTick} labelStyle={label} minimum={0} maximum={150}>
                                 {/* Pointer to denote the different stages. Different colored circles are used based on current state of the stage (Finished, in-progress, Unfinished).

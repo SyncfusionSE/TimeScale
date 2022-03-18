@@ -29,7 +29,7 @@
             <e-range start="103" end="147" startWidth="8" endWidth="8" [color]="NotStartedColor"></e-range>
           </e-ranges>
         </e-axis>
-        <!-- second axis to add images in the UI for each stage-->
+        <!-- second axis to add balloons in the UI for each stage-->
         <e-axis minimum="200" maximum="350" [line]='axisline' [minorTicks]="minorTick" [majorTicks]="majorTick">
           <e-pointers>
             <e-pointer type="Marker" markerType="Image" value="200" offset="-10" [imageUrl]="Stage1" height=50 width=50>
@@ -69,8 +69,8 @@
     </ejs-lineargauge>
   </div>
   <div class="gauge-container">
-    <ejs-lineargauge id="linear3" #gauge3 height="200px" title="Stage Progression" orientation="Horizontal"
-      (axisLabelRender)="axisLabelRender($event)">
+    <ejs-lineargauge id="linear3" #gauge3 height="200px" title="Shipping Status" orientation="Horizontal"
+      (axisLabelRender)="axisLabelRender3($event)">
       <e-axes>
         <e-axis minimum="0" maximum="150" [line]='axisline' [minorTicks]="minorTick" [majorTicks]="majorTick"
           [labelStyle]="label">

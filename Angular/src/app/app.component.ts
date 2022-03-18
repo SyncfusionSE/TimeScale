@@ -62,6 +62,21 @@ export class AppComponent {
     } else {
         //prevents rendering of default label for second axis
       args.cancel = true;
+    }  
+  }
+  //Provides label name for each stage on for the third gauge
+  public axisLabelRender3(args: IAxisLabelRenderEventArgs):void {
+    if (args.value == 0) {
+      args.text = 'Received';
+    } else if (args.value == 50) {
+      args.text = 'Shipped';
+    } else if (args.value == 100) {
+      args.text = 'In transit';
+    } else if (args.value == 150) {
+      args.text = 'Delivered';
+    } else {
+        //prevents rendering of default label for second axis
+      args.cancel = true;
     }
   }
   //Pass the image,color for pointers and ranges based on the current position.

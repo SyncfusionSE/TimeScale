@@ -57,7 +57,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
           { start: 103, end: 147, startWidth: 8, endWidth: 8, color: NotStartedColor },
         ],
       },
-      //second axis to add images in the UI for each stage.
+      //second axis to add balloons in the UI for each stage.
       {
         minimum: 200,
         maximum: 350,
@@ -112,7 +112,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
   gauge2.appendTo('#linear2');
   
   let gauge3: LinearGauge = new LinearGauge({
-    title: 'Stage Progression',
+    title: 'Shipping Status',
     height: '200px',
     orientation: 'Horizontal',
     axes: [
@@ -141,7 +141,7 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
         ],
       },
     ],
-    axisLabelRender: axisLabelRender,
+    axisLabelRender: axisLabelRender3,
   });
   gauge3.appendTo('#linear3');
   
@@ -155,6 +155,22 @@ import { NumericTextBox,ChangeEventArgs } from '@syncfusion/ej2-inputs';
       args.text = 'Stage 3';
     } else if (args.value == 150) {
       args.text = 'Stage 4';
+    } else {
+        //prevents rendering of default label for second axis
+      args.cancel = true;
+    }
+  }
+  
+  //Provides label name for each stage on for the third gauge
+  function axisLabelRender3(args: IAxisLabelRenderEventArgs):void {
+    if (args.value == 0) {
+      args.text = 'Received';
+    } else if (args.value == 50) {
+      args.text = 'Shipped';
+    } else if (args.value == 100) {
+      args.text = 'In transit';
+    } else if (args.value == 150) {
+      args.text = 'Delivered';
     } else {
         //prevents rendering of default label for second axis
       args.cancel = true;
