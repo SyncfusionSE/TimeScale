@@ -52,7 +52,7 @@
         </ejs-lineargauge>
       </div>
       <div class="gauge-container">
-        <ejs-lineargauge id="linear3" ref="gauge3" height="200px" title="Stage Progression" orientation="Horizontal" :axisLabelRender="axisLabelRender">
+        <ejs-lineargauge id="linear3" ref="gauge3" height="200px" title="Shipping Status" orientation="Horizontal" :axisLabelRender="axisLabelRender3">
           <e-axes>
             <e-axis minimum="0" maximum="150" :line="axisline" :minorTicks="minorTick" :majorTicks="majorTick" :labelStyle="label">
               <e-pointers>
@@ -128,6 +128,21 @@ export default {
         args.text = "Stage 4";
       } else {
   //Provides label name for each stage
+        args.cancel = true;
+      }
+    },    
+  //Provides label name for each stage on for the third gauge
+    axisLabelRender3: function (args) {
+      if (args.value == 0) {
+        args.text = 'Received';
+      } else if (args.value == 50) {
+        args.text = 'Shipped';
+      } else if (args.value == 100) {
+        args.text = 'In transit';
+      } else if (args.value == 150) {
+        args.text = 'Delivered';
+      } else {
+          //prevents rendering of default label for second axis
         args.cancel = true;
       }
     },
